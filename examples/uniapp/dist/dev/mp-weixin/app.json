@@ -1,0 +1,34 @@
+{
+  "pages": [
+    "pages/home/home"
+  ],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "大白菜数字化管理驾驶舱",
+    "navigationBarBackgroundColor": "#FFFFFF",
+    "backgroundColor": "#FFFFFF"
+  },
+  "tabBar": {
+    "color": "#7A7E83",
+    "selectedColor": "#006C3B",
+    "borderStyle": "white",
+    "backgroundColor": "#ffffff",
+    "height": "50px",
+    "fontSize": "13px",
+    "iconWidth": "23px",
+    "spacing": "3px",
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "总览"
+      }
+    ]
+  },
+  "lazyCodeLoading": "requiredComponents",
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    }
+  },
+  "onReachBottomDistance": 50
+}
