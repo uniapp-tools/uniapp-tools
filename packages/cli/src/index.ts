@@ -3,6 +3,7 @@ import os from 'os'
 import ci from 'miniprogram-ci'
 import { blue, yellow } from 'kolorist'
 import { getConfig, getPackageVersion, setPackageVersion } from './config'
+import { handleError } from './error'
 let result: prompts.Answers<'version' | 'versionType' | 'desc'>
 enum UploadType {
   Refactor = 'refactor',
@@ -46,8 +47,8 @@ async function init (): Promise<typeof result> {
       }
     ])
   } catch (cancelled: any) {
-    console.log(cancelled.message)
-    return await Promise.reject(cancelled.message)
+    console.log('cancelled', cancelled.message)
+    return await Promise.reject(cancelled)
   }
 
   return result
@@ -81,8 +82,9 @@ function updatePackageVersion (version: string, uploadType: UploadType): string 
   return versions.join('.')
 }
 
-export function main (): void {
-  init().then(async (result) => {
+export async function main (): Promise<void> {
+  await init().then((result) => {
+    // console.log('config', getConfig())
     console.log('result', result)
     const { version, versionType, desc } = result
     setPackageVersion(version)
@@ -121,8 +123,5 @@ export function main (): void {
     //   onProgressUpdate: console.log
     // })
     // console.log(uploadResult)
-  }).catch((e) => {
-    console.error(e)
-  })
-  console.log(getConfig())
+  }).catch(handleError)
 }

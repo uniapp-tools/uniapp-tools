@@ -1,0 +1,41 @@
+{
+  "name": "@un/cli",
+  "version": "0.1.1",
+  "type": "module",
+  "description": "",
+  "packageManager": "pnpm@8.7.6",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs"
+    }
+  },
+  "main": "./dist/index.mjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "bin": {
+    "unocss": "./bin/un.mjs"
+  },
+  "files": [
+    "bin",
+    "dist"
+  ],
+  "scripts": {
+    "un:deploy": "node ./dist/cli.mjs deploy",
+    "dev": "unbuild --stub",
+    "build": "unbuild"
+  },
+  "author": "zoudy",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/fs-extra": "^11.0.4",
+    "consola": "^3.2.3",
+    "kolorist": "^1.8.0",
+    "prompts": "^2.4.2"
+  },
+  "dependencies": {
+    "cac": "^6.7.14",
+    "fs-extra": "^11.2.0",
+    "miniprogram-ci": "^1.9.8"
+  }
+}

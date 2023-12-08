@@ -36,11 +36,11 @@ export function getConfig (options?: Options): Config {
 }
 
 export function getPackageVersion (): string {
-  const pkg = readJSONSync('./package.json')
+  const pkg = readJSONSync(path.join('package.json'))
   return pkg?.version ?? '1.0.0'
 }
 
 export function setPackageVersion (version: string): void {
-  const pkg = readJSONSync('./package.json')
+  const pkg = readJSONSync(path.join('package.json'))
   writeJsonSync('./package.json', { ...pkg, version }, { spaces: 2 })
 }
