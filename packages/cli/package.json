@@ -1,6 +1,6 @@
 {
   "name": "@un/cli",
-  "version": "0.1.1",
+  "version": "0.0.1",
   "type": "module",
   "description": "",
   "packageManager": "pnpm@8.7.6",
@@ -14,7 +14,7 @@
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
   "bin": {
-    "unocss": "./bin/un.mjs"
+    "un": "./bin/un.mjs"
   },
   "files": [
     "bin",

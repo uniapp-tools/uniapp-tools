@@ -2,15 +2,20 @@ import process from 'node:process'
 import { cac } from 'cac'
 import { version } from '../package.json'
 import { main } from './index'
-
 export async function startCli(argv = process.argv) {
   const cli = cac('un')
 
   cli
-    .command('deploy', 'deploy app')
+    .command('deploy', 'Deploy app')
+    // 项目地址 projectPath
+    .option('-p, --path <path>', 'Project path', {
+      default: '/',
+    })
     .action(async (options) => {
       console.log('##### deploy ', options)
-      await main()
+      await main({
+        projectPath: options.path as string
+      })
     })
 
   cli.help()

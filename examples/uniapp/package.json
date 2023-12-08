@@ -1,9 +1,13 @@
 {
   "name": "ci-uniapp",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "",
   "main": "main.js",
   "scripts": {
+    "upload": "un deploy -p './dist/dev/mp-weixin/'"
+  },
+  "devDependencies": {
+    "@un/cli": "link:../../packages/cli"
   },
   "author": "zoudy",
   "license": "MIT"

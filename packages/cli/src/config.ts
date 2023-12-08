@@ -11,23 +11,22 @@ import path from 'path'
 //   }
 // }
 
-interface Config {
-  appid: string
-  privateKeyPath: string
+export interface ConfigOptions {
+  appid?: string
+  privateKeyPath?: string
   projectPath: string
 }
-interface Options extends Config {
-}
 
-export function getConfig (options?: Options): Config {
-  const { projectPath = '' } = options ?? {}
+
+export function getConfig (options: ConfigOptions): Required<ConfigOptions> {
+  const { projectPath } = options
   // 获取project地址
-  const projectConfigPath = path.join('project.config.json')
+  const projectConfigPath = path.join(process.cwd(), 'project.config.json')
   const data = readFileSync(projectConfigPath, 'utf8')
   const projectInfo = JSON.parse(data)
   // 读数appid,等信息
   const appid = projectInfo.appid
-  const privateKeyPath = path.join(`private.${appid}.key`)
+  const privateKeyPath = path.join(process.cwd(), `private.${appid}.key`)
   return {
     appid,
     projectPath,
@@ -36,11 +35,11 @@ export function getConfig (options?: Options): Config {
 }
 
 export function getPackageVersion (): string {
-  const pkg = readJSONSync(path.join('package.json'))
-  return pkg?.version ?? '1.0.0'
+  const pkg = readJSONSync(path.join(process.cwd(), 'package.json'))
+  return pkg?.version ?? '0.0.0'
 }
 
 export function setPackageVersion (version: string): void {
-  const pkg = readJSONSync(path.join('package.json'))
+  const pkg = readJSONSync(path.join(process.cwd(), 'package.json'))
   writeJsonSync('./package.json', { ...pkg, version }, { spaces: 2 })
 }

@@ -15,8 +15,8 @@ export class PrettyError extends Error {
 }
 
 export function handleError(error: unknown) {
-  if (error instanceof PrettyError)
-    consola.error(error.message)
+  // if (error instanceof PrettyError)
+    consola.error(error)
 
   process.exitCode = 1
 }
