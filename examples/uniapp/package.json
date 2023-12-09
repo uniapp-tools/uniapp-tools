@@ -1,10 +1,11 @@
 {
   "name": "ci-uniapp",
-  "version": "0.3.2",
+  "version": "1.0.0",
   "description": "",
   "main": "main.js",
   "scripts": {
-    "upload": "un deploy -p dist/dev/mp-weixin"
+    "upload": "un deploy -p dist/dev/mp-weixin",
+    "upload:script": "node main.mjs"
   },
   "devDependencies": {
     "@un/cli": "link:../../packages/cli"

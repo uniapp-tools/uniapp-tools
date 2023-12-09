@@ -1,7 +1,7 @@
 import process from 'node:process'
 import { cac } from 'cac'
 import { version } from '../package.json'
-import { main } from './index'
+import { upload } from './index'
 export async function startCli(argv = process.argv) {
   const cli = cac('un')
 
@@ -13,7 +13,7 @@ export async function startCli(argv = process.argv) {
     })
     .action(async (options) => {
       console.log('##### deploy ', options)
-      await main({
+      await upload({
         projectPath: options.path as string
       })
     })

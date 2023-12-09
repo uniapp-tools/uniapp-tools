@@ -85,7 +85,7 @@ async function init (): Promise<typeof result> {
   return result
 }
 
-export async function main (options: ConfigOptions){
+export async function upload (options: ConfigOptions){
     await init().then(async (result) => {
       // console.log('result', result)
       const { version, versionType, desc } = result
@@ -134,9 +134,9 @@ export async function main (options: ConfigOptions){
             consola.log(task)
           } else {
             if (task.status === 'doing' ) { 
-              consola.start(`正在编译代码：${task.message}`)
+              consola.start(`正在上传代码：${task.message}`)
             } else {
-              consola.success(`编译完成：${task.message}`)
+              consola.success(`上传完成：${task.message}`)
             }
           }
         }
