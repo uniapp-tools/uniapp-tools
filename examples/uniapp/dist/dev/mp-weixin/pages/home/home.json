@@ -1,6 +1,5 @@
 {
   "navigationBarTitleText": "交易总览",
-  "navigationStyle": "custom",
   "enablePullDownRefresh": true,
   "usingComponents": {
   }

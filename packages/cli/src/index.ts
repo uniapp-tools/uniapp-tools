@@ -1,6 +1,8 @@
 import prompts from 'prompts'
 import os from 'node:os'
-import ci from 'miniprogram-ci'
+import cp from 'child_process'
+import * as ci from 'miniprogram-ci'
+import { consola } from 'consola'
 import { blue, yellow } from 'kolorist'
 import { ConfigOptions, getConfig, getPackageVersion, setPackageVersion } from './config'
 import { handleError } from './error'
@@ -85,12 +87,11 @@ async function init (): Promise<typeof result> {
 
 export async function main (options: ConfigOptions){
     await init().then(async (result) => {
-      console.log('result', result)
+      // console.log('result', result)
       const { version, versionType, desc } = result
       const { appid, projectPath, privateKeyPath } = getConfig(options)
-      console.log('config', getConfig(options))
+      // console.log('config', getConfig(options))
       // // 注意： new ci.Project 调用时，请确保项目代码已经是完整的，避免编译过程出现找不到文件的报错。
-      console.log('ci.Project', typeof ci.Project)
       const project = new ci.Project({
         appid,
         type: 'miniProgram', // 显示指明当前的项目类型, 默认为 miniProgram，有效值 miniProgram/miniProgramPlugin/miniGame/miniGamePlugin
@@ -98,14 +99,20 @@ export async function main (options: ConfigOptions){
         privateKeyPath, // 微信公众平台密钥，建议放项目根目录 (⚠️修改)
         ignores: ['node_modules/**/*']
       })
-      console.log('project', project)
+      // console.log('project', project)
       // 获取cpu线程数
       const threads = os.cpus().length
-      console.log('threads', threads)
+      // console.log('threads', threads)
+      consola.start(`项目配置解析成功，开始多线程(线程数：${threads})上传`)
+      consola.start(`获取git username`)
+      const authorName = cp.execSync('git config --get user.name', {
+        encoding: 'utf8',
+      });
+      consola.success(`获取开发者成功：${authorName}`)
       const uploadResult = await ci.upload({
         project,
         version,
-        desc,
+        desc: desc + '\n' + `由 ${authorName} 提交上传`,
         // robot 1-30
         // eslint-disable-next-line @typescript-eslint/strict-boolean-expressions
         robot: versionType ? 1 : 2,
@@ -122,9 +129,22 @@ export async function main (options: ConfigOptions){
           autoPrefixWXSS: true
         },
         // 进度更新监听函数
-        onProgressUpdate: console.log
+        onProgressUpdate: (task) => {
+          if (typeof task === 'string') {
+            consola.log(task)
+          } else {
+            if (task.status === 'doing' ) { 
+              consola.start(`正在编译代码：${task.message}`)
+            } else {
+              consola.success(`编译完成：${task.message}`)
+            }
+          }
+        }
       })
+      consola.success("上传成功!");
+      consola.start('开始同步更新本地版本号')
       setPackageVersion(version)
-      console.log(uploadResult)
+      consola.success('同步更新版本号成功')
+      // consola.log(uploadResult)
     }).catch(handleError)
 }

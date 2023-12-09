@@ -8,22 +8,6 @@
     "navigationBarBackgroundColor": "#FFFFFF",
     "backgroundColor": "#FFFFFF"
   },
-  "tabBar": {
-    "color": "#7A7E83",
-    "selectedColor": "#006C3B",
-    "borderStyle": "white",
-    "backgroundColor": "#ffffff",
-    "height": "50px",
-    "fontSize": "13px",
-    "iconWidth": "23px",
-    "spacing": "3px",
-    "list": [
-      {
-        "pagePath": "pages/home/home",
-        "text": "总览"
-      }
-    ]
-  },
   "lazyCodeLoading": "requiredComponents",
   "permission": {
     "scope.userLocation": {
