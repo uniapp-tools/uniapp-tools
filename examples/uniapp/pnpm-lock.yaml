@@ -8,6 +8,6 @@ importers:
 
   .:
     devDependencies:
-      '@un/cli':
+      '@mc/cli':
         specifier: link:../../packages/cli
         version: link:../../packages/cli

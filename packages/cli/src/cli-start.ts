@@ -3,14 +3,12 @@ import { cac } from 'cac'
 import { version } from '../package.json'
 import { upload } from './index'
 export async function startCli(argv = process.argv) {
-  const cli = cac('un')
+  const cli = cac('mc')
 
   cli
     .command('deploy', 'Deploy app')
     // 项目地址 projectPath
-    .option('-p, --path <path>', 'Project path', {
-      default: '/',
-    })
+    .option('-p, --path <path>', 'Project path')
     .action(async (options) => {
       console.log('##### deploy ', options)
       await upload({

@@ -8,15 +8,15 @@ importers:
 
   .:
     devDependencies:
+      '@mc/cli':
+        specifier: workspace:*
+        version: link:packages/cli
       '@types/node':
         specifier: ^20.10.3
         version: 20.10.3
       '@typescript-eslint/eslint-plugin':
         specifier: ^6.4.0
         version: 6.13.2(@typescript-eslint/parser@6.13.2)(eslint@8.55.0)(typescript@5.3.2)
-      '@un/cli':
-        specifier: workspace:*
-        version: link:packages/cli
       eslint:
         specifier: ^8.0.1
         version: 8.55.0

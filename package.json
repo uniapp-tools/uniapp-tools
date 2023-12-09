@@ -1,5 +1,5 @@
 {
-  "name": "@un/monorepo",
+  "name": "@mc/monorepo",
   "version": "1.0.0",
   "type": "module",
   "description": "",
@@ -14,7 +14,7 @@
   "devDependencies": {
     "@types/node": "^20.10.3",
     "@typescript-eslint/eslint-plugin": "^6.4.0",
-    "@un/cli": "workspace:*",
+    "@mc/cli": "workspace:*",
     "eslint": "^8.0.1",
     "eslint-config-standard-with-typescript": "^40.0.0",
     "eslint-plugin-import": "^2.25.2",

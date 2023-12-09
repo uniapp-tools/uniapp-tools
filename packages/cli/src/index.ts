@@ -99,7 +99,7 @@ export async function upload (options: ConfigOptions){
         privateKeyPath, // 微信公众平台密钥，建议放项目根目录 (⚠️修改)
         ignores: ['node_modules/**/*']
       })
-      // console.log('project', project)
+      console.log('project', project)
       // 获取cpu线程数
       const threads = os.cpus().length
       // console.log('threads', threads)

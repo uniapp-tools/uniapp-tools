@@ -14,12 +14,12 @@ import path from 'path'
 export interface ConfigOptions {
   appid?: string
   privateKeyPath?: string
-  projectPath: string
+  projectPath?: string
 }
 
 
 export function getConfig (options: ConfigOptions): Required<ConfigOptions> {
-  const { projectPath } = options
+  const { projectPath = process.cwd() } = options
   // 获取project地址
   const projectConfigPath = path.join(process.cwd(), 'project.config.json')
   const data = readFileSync(projectConfigPath, 'utf8')

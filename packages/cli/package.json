@@ -1,5 +1,5 @@
 {
-  "name": "@un/cli",
+  "name": "@mc/cli",
   "version": "0.0.1",
   "type": "module",
   "description": "",
@@ -14,14 +14,14 @@
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
   "bin": {
-    "un": "./bin/un.mjs"
+    "mc": "./bin/mc.mjs"
   },
   "files": [
     "bin",
     "dist"
   ],
   "scripts": {
-    "un:deploy": "node ./dist/cli.mjs deploy",
+    "mc:deploy": "node ./dist/cli.mjs deploy",
     "dev": "unbuild --stub",
     "build": "unbuild"
   },
