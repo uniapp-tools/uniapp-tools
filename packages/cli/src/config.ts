@@ -1,5 +1,4 @@
-import { readFileSync } from 'node:fs'
-import { readJSONSync, writeJsonSync } from 'fs-extra'
+import fs from 'fs-extra'
 import path from 'path'
 
 // const loadWxconfig = (cwd): void => {
@@ -22,7 +21,7 @@ export function getConfig (options: ConfigOptions): Required<ConfigOptions> {
   const { projectPath = process.cwd() } = options
   // 获取project地址
   const projectConfigPath = path.join(process.cwd(), 'project.config.json')
-  const data = readFileSync(projectConfigPath, 'utf8')
+  const data = fs.readFileSync(projectConfigPath, 'utf8')
   const projectInfo = JSON.parse(data)
   // 读数appid,等信息
   const appid = projectInfo.appid
@@ -35,11 +34,11 @@ export function getConfig (options: ConfigOptions): Required<ConfigOptions> {
 }
 
 export function getPackageVersion (): string {
-  const pkg = readJSONSync(path.join(process.cwd(), 'package.json'))
+  const pkg = fs.readJSONSync(path.join(process.cwd(), 'package.json'))
   return pkg?.version ?? '0.0.0'
 }
 
 export function setPackageVersion (version: string): void {
-  const pkg = readJSONSync(path.join(process.cwd(), 'package.json'))
-  writeJsonSync('./package.json', { ...pkg, version }, { spaces: 2 })
+  const pkg = fs.readJSONSync(path.join(process.cwd(), 'package.json'))
+  fs.writeJsonSync('./package.json', { ...pkg, version }, { spaces: 2 })
 }

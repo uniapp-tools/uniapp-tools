@@ -109,7 +109,7 @@ export async function upload (options: ConfigOptions){
         encoding: 'utf8',
       });
       consola.success(`获取开发者成功：${authorName}`)
-      const uploadResult = await ci.upload({
+      await ci.upload({
         project,
         version,
         desc: desc + '\n' + `由 ${authorName} 提交上传`,

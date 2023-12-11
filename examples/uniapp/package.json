@@ -1,15 +1,19 @@
 {
   "name": "ci-uniapp",
-  "version": "1.0.1",
+  "version": "1.0.5",
   "description": "",
   "main": "main.js",
   "scripts": {
     "upload": "mc deploy -p dist/dev/mp-weixin",
-    "upload:script": "node main.mjs"
+    "upload:script": "node main.js",
+    "upload:ts": "esno index.ts"
   },
   "devDependencies": {
-    "@mc/cli": "link:../../packages/cli"
+    "mc": "link:../../packages/cli"
   },
   "author": "zoudy",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "esno": "^4.0.0"
+  }
 }

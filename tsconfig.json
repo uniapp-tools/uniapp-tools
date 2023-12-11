@@ -1,5 +1,4 @@
 {
-  "include": ["build.config.ts", "src", "__tests__"],
   "compilerOptions": {
     "outDir": "dist",
     "target": "ES2022",
@@ -14,5 +13,10 @@
   },
   "paths": {
     "@mc/cli": ["./packages/cli/src/index.ts"],
-  }
+  },
+  "exclude": [
+    "**/dist/**",
+    "**/node_modules/**",
+    "**/examples/**"
+  ]
 }

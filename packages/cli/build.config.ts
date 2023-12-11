@@ -7,11 +7,12 @@ export default defineBuildConfig({
   // Change outDir, default is 'dist'
   outDir: 'dist',
   rollup: {
+    emitCJS: true,
     inlineDependencies: true,
-    esbuild: {
-      target: 'node18',
-      minify: true
-    }
+    // esbuild: {
+    //   target: 'node18',
+    //   minify: true
+    // }
   },
   alias: {
     // we can always use non-transpiled code since we support node 18+
