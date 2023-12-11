@@ -1,6 +1,7 @@
 {
   "name": "mc",
   "version": "0.0.1",
+  "private": true,
   "description": "miniprogram-ci tools",
   "main": "dist/index.cjs",
   "module": "dist/index.mjs",
