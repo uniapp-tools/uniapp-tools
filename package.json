@@ -30,6 +30,7 @@
     "eslint-plugin-promise": "^6.0.0",
     "esno": "^4.0.0",
     "lint-staged": "^15.2.0",
+    "mc": "workspace:*",
     "rimraf": "^5.0.5",
     "typescript": "*",
     "unbuild": "^2.0.0"

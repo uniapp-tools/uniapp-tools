@@ -15,7 +15,7 @@
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
   "bin": {
-    "mc": "./bin/mc.mjs"
+    "mc": "./bin/mc.js"
   },
   "files": [
     "bin",

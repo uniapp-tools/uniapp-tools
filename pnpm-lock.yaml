@@ -41,6 +41,9 @@ importers:
       lint-staged:
         specifier: ^15.2.0
         version: 15.2.0
+      mc:
+        specifier: workspace:*
+        version: link:packages/mc
       rimraf:
         specifier: ^5.0.5
         version: 5.0.5
@@ -78,6 +81,12 @@ importers:
       prompts:
         specifier: ^2.4.2
         version: 2.4.2
+
+  packages/mc:
+    dependencies:
+      '@mc/cli':
+        specifier: workspace:*
+        version: link:../cli
 
 packages:
 

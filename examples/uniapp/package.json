@@ -1,6 +1,6 @@
 {
   "name": "ci-uniapp",
-  "version": "1.0.5",
+  "version": "1.0.12",
   "description": "",
   "main": "main.js",
   "scripts": {
@@ -9,11 +9,10 @@
     "upload:ts": "esno index.ts"
   },
   "devDependencies": {
-    "mc": "link:../../packages/cli"
+    "@mc/cli": "link:../../packages/cli",
+    "mc": "link:../../packages/mc",
+    "esno": "^4.0.0"
   },
   "author": "zoudy",
-  "license": "MIT",
-  "dependencies": {
-    "esno": "^4.0.0"
-  }
+  "license": "MIT"
 }

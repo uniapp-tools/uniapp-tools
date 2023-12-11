@@ -1,0 +1,32 @@
+{
+  "name": "mc",
+  "version": "0.0.1",
+  "description": "miniprogram-ci tools",
+  "main": "dist/index.cjs",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "files": [
+    "*.d.ts",
+    "dist"
+  ],
+  "engines": {
+    "node": ">=14"
+  },
+  "scripts": {
+    "build": "unbuild",
+    "stub": "unbuild --stub"
+  },
+  "keywords": [
+    "miniprogram-ci",
+    "miniapp",
+    "uniapp",
+    "wechat app",
+    "micro app"
+  ],
+  "sideEffects": false,
+  "author": "de1ck",
+  "license": "MIT",
+  "dependencies": {
+    "@mc/cli": "workspace:*"
+  }
+}

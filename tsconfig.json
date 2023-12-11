@@ -13,6 +13,7 @@
   },
   "paths": {
     "@mc/cli": ["./packages/cli/src/index.ts"],
+    "mc": ["./packages/mc/src/index.ts"],
   },
   "exclude": [
     "**/dist/**",

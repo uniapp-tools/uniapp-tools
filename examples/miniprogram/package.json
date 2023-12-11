@@ -1,6 +1,6 @@
 {
   "name": "miniprogram-ts-less-quickstart",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "",
   "scripts": {
     "upload": "mc deploy"
@@ -8,10 +8,8 @@
   "keywords": [],
   "author": "",
   "license": "",
-  "dependencies": {
-    "mc": "link:../../packages/cli"
-  },
   "devDependencies": {
+    "@mc/cli": "link:../../packages/cli",
     "miniprogram-api-typings": "^2.8.3-1"
   }
 }
