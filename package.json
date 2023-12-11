@@ -15,7 +15,7 @@
     "stub": "pnpm -r --filter=./packages/* --parallel run stub",
     "build": "rimraf packages/*/dist --glob && pnpm -r --filter=./packages/* run build",
     "release": "bumpp -r",
-    "publish": "pnpm -r publish --filter=./packages/**"
+    "publish": "pnpm -r publish"
   },
   "author": "zoudy",
   "license": "MIT",
