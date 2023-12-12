@@ -1,7 +1,6 @@
 {
   "name": "@mc/cli",
   "version": "0.0.3",
-  "private": true,
   "description": "",
   "packageManager": "pnpm@8.7.6",
   "sideEffects": false,
