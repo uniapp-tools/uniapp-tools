@@ -10,7 +10,7 @@ export async function startCli(argv = process.argv) {
     // 项目地址 projectPath
     .option('-p, --path <path>', 'Project path')
     .action(async (options: any) => {
-      console.log('##### deploy ', options)
+      // console.log('##### deploy ', options)
       await upload({
         projectPath: options.path as string
       })
