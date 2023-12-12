@@ -1,5 +1,5 @@
 {
-  "name": "mc",
+  "name": "uniapp-tools",
   "version": "0.0.3",
   "description": "miniprogram-ci tools",
   "main": "dist/index.cjs",
@@ -27,6 +27,6 @@
   "author": "de1ck",
   "license": "MIT",
   "dependencies": {
-    "@mc/cli": "workspace:*"
+    "@uniapp-tools/cli": "workspace:*"
   }
 }

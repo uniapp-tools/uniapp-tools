@@ -1,16 +1,16 @@
 {
   "name": "ci-uniapp",
-  "version": "1.0.12",
+  "version": "1.0.14",
   "description": "",
   "main": "main.js",
   "scripts": {
-    "upload": "mc deploy -p dist/dev/mp-weixin",
+    "upload": "ut deploy -p dist/dev/mp-weixin",
     "upload:script": "node main.js",
     "upload:ts": "esno index.ts"
   },
   "devDependencies": {
-    "@mc/cli": "link:../../packages/cli",
-    "mc": "link:../../packages/mc",
+    "@uniapp-tools/cli": "link:../../packages/cli",
+    "uniapp-tools": "link:../../packages/uniapp-tools",
     "esno": "^4.0.0"
   },
   "author": "zoudy",

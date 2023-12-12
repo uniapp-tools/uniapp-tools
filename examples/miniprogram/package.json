@@ -1,15 +1,15 @@
 {
   "name": "miniprogram-ts-less-quickstart",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "",
   "scripts": {
-    "upload": "mc deploy"
+    "upload": "ut deploy"
   },
   "keywords": [],
   "author": "",
   "license": "",
   "devDependencies": {
-    "@mc/cli": "link:../../packages/cli",
+    "@uniapp-tools/cli": "link:../../packages/cli",
     "miniprogram-api-typings": "^2.8.3-1"
   }
 }

@@ -8,15 +8,15 @@ importers:
 
   .:
     devDependencies:
-      '@mc/cli':
+      '@uniapp-tools/cli':
         specifier: link:../../packages/cli
         version: link:../../packages/cli
       esno:
         specifier: ^4.0.0
         version: 4.0.0
-      mc:
-        specifier: link:../../packages/mc
-        version: link:../../packages/mc
+      uniapp-tools:
+        specifier: link:../../packages/uniapp-tools
+        version: link:../../packages/uniapp-tools
 
 packages:
 

@@ -12,8 +12,8 @@
     "esModuleInterop": true
   },
   "paths": {
-    "@mc/cli": ["./packages/cli/src/index.ts"],
-    "mc": ["./packages/mc/src/index.ts"],
+    "@uniapp-tools/cli": ["./packages/cli/src/index.ts"],
+    "uniapp-tools": ["./packages/uniapp-tools/src/index.ts"],
   },
   "exclude": [
     "**/dist/**",

@@ -1,5 +1,5 @@
 {
-  "name": "@mc/monorepo",
+  "name": "@uniapp-tools/monorepo",
   "version": "0.0.3",
   "type": "module",
   "description": "",
@@ -19,7 +19,7 @@
   "author": "zoudy",
   "license": "MIT",
   "devDependencies": {
-    "@mc/cli": "workspace:*",
+    "@uniapp-tools/cli": "workspace:*",
     "@types/node": "^20.10.3",
     "@typescript-eslint/eslint-plugin": "^6.4.0",
     "bumpp": "^9.2.1",
@@ -30,7 +30,7 @@
     "eslint-plugin-promise": "^6.0.0",
     "esno": "^4.0.0",
     "lint-staged": "^15.2.0",
-    "mc": "workspace:*",
+    "uniapp-tools": "workspace:*",
     "rimraf": "^5.0.5",
     "typescript": "*",
     "unbuild": "^2.0.0"

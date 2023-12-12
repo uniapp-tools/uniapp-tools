@@ -1,4 +1,4 @@
-import { upload } from 'mc'
+import { upload } from 'uniapp-tools'
 upload({
   projectPath: 'dist/dev/mp-weixin'
 })

@@ -1,5 +1,5 @@
 {
-  "name": "@mc/cli",
+  "name": "@uniapp-tools/cli",
   "version": "0.0.3",
   "description": "",
   "packageManager": "pnpm@8.7.6",
@@ -15,7 +15,7 @@
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
   "bin": {
-    "mc": "./bin/mc.js"
+    "ut": "./bin/index.js"
   },
   "files": [
     "bin",
