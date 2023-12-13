@@ -1,6 +1,6 @@
 {
   "name": "uniapp-tools",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "miniprogram-ci tools",
   "main": "dist/index.cjs",
   "module": "dist/index.mjs",
