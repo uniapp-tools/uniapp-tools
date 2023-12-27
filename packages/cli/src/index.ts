@@ -4,7 +4,7 @@ import cp from 'child_process'
 import * as ci from 'miniprogram-ci'
 import { consola } from 'consola'
 import { blue, yellow } from 'kolorist'
-import { ConfigOptions, getConfig, getPackageVersion, setPackageVersion } from './config'
+import { ConfigOptions, getConfig, getPackageVersion } from './config'
 import { handleError } from './error'
 let result: prompts.Answers<'version' | 'versionType' | 'desc'>
 enum UploadType {
@@ -142,9 +142,9 @@ export async function upload (options: ConfigOptions){
         }
       })
       consola.success("上传成功!");
-      consola.start('开始同步更新本地版本号')
-      setPackageVersion(version)
-      consola.success('同步更新版本号成功')
+      // consola.start('开始同步更新本地版本号')
+      // setPackageVersion(version)
+      // consola.success('同步更新版本号成功')
       // consola.log(uploadResult)
     }).catch(handleError)
 }

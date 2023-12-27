@@ -8,7 +8,7 @@
     "packages/**"
   ],
   "scripts": {
-    "dev": "nr stub",
+    "dev": "pnpm run stub",
     "lint": "eslint --cache .",
     "lint:fix": "nr lint --fix",
     "stub": "pnpm -r --filter=./packages/* --parallel run stub",
