@@ -23,7 +23,7 @@ pnpm add @uniapp-tools/cli
 ```
 
 ### 执行cli
---path 是项目dist目录，默认位项目根目录
+--path 是项目dist目录，默认为项目根目录
 ```bash
 # uniapp project
 ut deploy -p dist/dev/mp-weixin
